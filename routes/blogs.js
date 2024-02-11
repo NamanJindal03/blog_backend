@@ -7,5 +7,6 @@ const {verifyBlogCreator} = require('../middlewares/verifyBlogCreator');
 router.post('/', verifyAndFetchUser, blogsController.addBlogs);
 router.put('/:id', verifyAndFetchUser, verifyBlogCreator, blogsController.updateBlog);
 router.delete('/:id', verifyAndFetchUser, verifyBlogCreator, blogsController.deleteBlog);
+router.post('/:blogId/comment',verifyAndFetchUser, blogsController.addComment )
 
 module.exports = router;
